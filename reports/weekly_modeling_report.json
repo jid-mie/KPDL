@@ -1,0 +1,141 @@
+{
+  "description": "Weekly demand forecasting comparison on identical 3,271-product cohort and strict non-overlapping 7-day weeks",
+  "weekly_dataset_summary": {
+    "modeled_products": 3271,
+    "total_rows": 340184,
+    "train_rows": 166821,
+    "val_rows": 39252,
+    "test_rows": 127569,
+    "train_week_range": [
+      "2009-12-07",
+      "2010-11-28"
+    ],
+    "val_week_range": [
+      "2010-12-06",
+      "2011-02-27"
+    ],
+    "test_week_range": [
+      "2011-03-07",
+      "2011-12-04"
+    ],
+    "zero_demand_percentage": 49.11,
+    "test_zero_demand_percentage": 53.26
+  },
+  "selected_best_model_by_val_wape": "HistGB_L1",
+  "models_performance": {
+    "Lag1W_Baseline": {
+      "val": {
+        "MAE": 21.9139,
+        "RMSE": 94.3945,
+        "WAPE": 1.0686,
+        "R2": -0.3094
+      },
+      "test": {
+        "MAE": 21.3067,
+        "RMSE": 87.7804,
+        "WAPE": 0.8563,
+        "R2": 0.1316
+      }
+    },
+    "TwoStageWeekly": {
+      "val": {
+        "MAE": 16.9365,
+        "RMSE": 70.8677,
+        "WAPE": 0.8259,
+        "R2": 0.262
+      },
+      "test": {
+        "MAE": 17.0064,
+        "RMSE": 69.7045,
+        "WAPE": 0.6835,
+        "R2": 0.4524
+      },
+      "sale_probability_threshold": 0.5
+    },
+    "Ridge": {
+      "val": {
+        "MAE": 24.6123,
+        "RMSE": 76.5073,
+        "WAPE": 1.2002,
+        "R2": 0.1398
+      },
+      "test": {
+        "MAE": 22.2985,
+        "RMSE": 71.4508,
+        "WAPE": 0.8962,
+        "R2": 0.4246
+      }
+    },
+    "RandomForest": {
+      "val": {
+        "MAE": 28.395,
+        "RMSE": 90.7964,
+        "WAPE": 1.3847,
+        "R2": -0.2115
+      },
+      "test": {
+        "MAE": 24.7286,
+        "RMSE": 77.6827,
+        "WAPE": 0.9939,
+        "R2": 0.3199
+      }
+    },
+    "HistGB_L1": {
+      "val": {
+        "MAE": 16.265,
+        "RMSE": 69.6484,
+        "WAPE": 0.7932,
+        "R2": 0.2871
+      },
+      "test": {
+        "MAE": 16.3357,
+        "RMSE": 71.1005,
+        "WAPE": 0.6565,
+        "R2": 0.4302
+      }
+    },
+    "HistGB_L2": {
+      "val": {
+        "MAE": 26.7992,
+        "RMSE": 92.0343,
+        "WAPE": 1.3069,
+        "R2": -0.2447
+      },
+      "test": {
+        "MAE": 23.1892,
+        "RMSE": 84.7472,
+        "WAPE": 0.932,
+        "R2": 0.1905
+      }
+    },
+    "XGBoost": {
+      "val": {
+        "MAE": 24.5637,
+        "RMSE": 85.9881,
+        "WAPE": 1.1978,
+        "R2": -0.0866
+      },
+      "test": {
+        "MAE": 22.637,
+        "RMSE": 78.9666,
+        "WAPE": 0.9098,
+        "R2": 0.2972
+      }
+    },
+    "Daily_TwoStage_SummedToWeekly": {
+      "val": {},
+      "test": {
+        "MAE": 17.8472,
+        "RMSE": 68.6813,
+        "WAPE": 0.7173,
+        "R2": 0.4684
+      }
+    }
+  },
+  "qa_remediations_applied": [
+    "Filtered to the exact 3,271 products with >=10 active training days for apples-to-apples comparison with daily models.",
+    "Eliminated boundary-week leakage by requiring complete 7-day weeks strictly inside each split window.",
+    "Removed .bfill() on UnitPrice to prevent future price leakage into training weeks.",
+    "Removed raw Year feature to avoid out-of-range extrapolation drift on 2011 test data."
+  ]
+}

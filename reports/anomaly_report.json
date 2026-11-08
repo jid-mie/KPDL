@@ -1,0 +1,62 @@
+{
+  "days": 604,
+  "quantity_rule_anomalies": 30,
+  "revenue_rule_anomalies": 29,
+  "isolation_forest_anomalies": 13,
+  "product_demand_anomalies": 41168,
+  "product_demand_positive_rows": 530098,
+  "product_demand_anomaly_pct_of_positive_days": 7.766,
+  "top_quantity_days": [
+    {
+      "Date": "2010-09-27",
+      "TotalQuantity": 125489,
+      "TotalRevenue": 118838.47
+    },
+    {
+      "Date": "2010-08-09",
+      "TotalQuantity": 100224,
+      "TotalRevenue": 31692.27
+    },
+    {
+      "Date": "2010-02-15",
+      "TotalQuantity": 96425,
+      "TotalRevenue": 42469.531
+    },
+    {
+      "Date": "2011-12-09",
+      "TotalQuantity": 93950,
+      "TotalRevenue": 200918.97999999998
+    },
+    {
+      "Date": "2011-01-18",
+      "TotalQuantity": 82964,
+      "TotalRevenue": 95947.73000000001
+    },
+    {
+      "Date": "2010-03-17",
+      "TotalQuantity": 78859,
+      "TotalRevenue": 30719.54
+    },
+    {
+      "Date": "2010-01-21",
+      "TotalQuantity": 72900,
+      "TotalRevenue": 27359.23
+    },
+    {
+      "Date": "2010-11-04",
+      "TotalQuantity": 60269,
+      "TotalRevenue": 89585.63
+    },
+    {
+      "Date": "2010-03-23",
+      "TotalQuantity": 54452,
+      "TotalRevenue": 56400.48
+    },
+    {
+      "Date": "2009-12-03",
+      "TotalQuantity": 49221,
+      "TotalRevenue": 73972.45
+    }
+  ],
+  "threshold": "Aggregate series: trailing 28-day median, shifted by one day; ratio >=3 or <=0.33. Product series: only positive demand can be flagged, trailing 90 calendar observations, upper fence Q3+1.5*IQR, at least 12 prior positive observations. IsolationForest contamination=2% is exploratory."
+}

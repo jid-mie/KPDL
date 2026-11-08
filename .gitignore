@@ -1,0 +1,15 @@
+# Virtual environment & Python cache
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Raw dataset & large generated intermediate datasets
+online_retail_II.xlsx
+data/processed/transactions_clean.csv
+data/processed/transactions_clean.parquet
+data/processed/product_daily_demand.csv
+data/processed/product_daily_demand.parquet
+data/model/*.parquet
+data/model/predictions/*.parquet
+reports/product_demand_anomalies.parquet

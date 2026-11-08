@@ -1,0 +1,106 @@
+{
+  "input_file": "data/processed/product_daily_demand.parquet",
+  "low_frequency_filter": {
+    "products_before": 4733,
+    "products_after": 3271,
+    "products_removed": 1462,
+    "rows_before": 3497687,
+    "rows_after": 2417269,
+    "min_active_days_threshold": 10
+  },
+  "outlier_detection": {
+    "method": "per-product IQR (Q3 + 1.5 × IQR) on positive demand",
+    "outlier_rows": 38533,
+    "outlier_pct": 1.5941
+  },
+  "split": {
+    "train": {
+      "rows": 1193915,
+      "date_range": [
+        "2009-12-01",
+        "2010-11-30"
+      ]
+    },
+    "val": {
+      "rows": 294390,
+      "date_range": [
+        "2010-12-01",
+        "2011-02-28"
+      ]
+    },
+    "test": {
+      "rows": 928964,
+      "date_range": [
+        "2011-03-01",
+        "2011-12-09"
+      ]
+    }
+  },
+  "demand_distribution_by_split": {
+    "train": {
+      "count": 1193915.0,
+      "mean": 4.6414,
+      "std": 58.0091,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 0.0,
+      "max": 19152.0
+    },
+    "val": {
+      "count": 294390.0,
+      "mean": 3.0642,
+      "std": 26.855,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 0.0,
+      "max": 3906.0
+    },
+    "test": {
+      "count": 928964.0,
+      "mean": 3.5992,
+      "std": 26.6466,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 0.0,
+      "max": 4848.0
+    }
+  },
+  "feature_columns": [
+    "AvgUnitPrice",
+    "Day",
+    "DayOfWeek",
+    "DaysSinceLastSale",
+    "InvoiceCountLag_1",
+    "IsHoliday",
+    "Lag_1",
+    "Lag_14",
+    "Lag_28",
+    "Lag_7",
+    "Month",
+    "PriceChange",
+    "PriceLag_1",
+    "ProductCluster",
+    "RollingMean_14",
+    "RollingMean_28",
+    "RollingMean_7",
+    "RollingStd_28",
+    "RollingSum_7",
+    "TotalActiveDays",
+    "TotalQuantitySold",
+    "WeekOfYear",
+    "Year"
+  ],
+  "holiday_source": "holidays.UK",
+  "notes": [
+    "All lag and rolling features use shift(≥1) to prevent data leakage.",
+    "Product-level features are computed from training data only.",
+    "UnitPrice is forward-filled across zero-sale days before computing price features.",
+    "DailyDemand_Log uses log1p(x) = ln(1+x) to handle zero demand.",
+    "ProductCluster is fitted from training-only product aggregates.",
+    "Contemporaneous UnitPrice and InvoiceCount are retained for reporting but excluded from forecasting predictors.",
+    "Target-derived transformations and outlier flags are excluded from model feature_columns."
+  ]
+}

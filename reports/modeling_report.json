@@ -1,0 +1,269 @@
+{
+  "target": "DailyDemand",
+  "feature_count": 23,
+  "features": [
+    "Year",
+    "Month",
+    "Day",
+    "DayOfWeek",
+    "WeekOfYear",
+    "IsHoliday",
+    "Lag_1",
+    "Lag_7",
+    "Lag_14",
+    "Lag_28",
+    "RollingMean_7",
+    "RollingMean_14",
+    "RollingMean_28",
+    "RollingSum_7",
+    "RollingStd_28",
+    "DaysSinceLastSale",
+    "PriceLag_1",
+    "PriceChange",
+    "InvoiceCountLag_1",
+    "TotalActiveDays",
+    "TotalQuantitySold",
+    "AvgUnitPrice",
+    "ProductCluster"
+  ],
+  "train_rows_used": 250000,
+  "train_sampled": true,
+  "validation_rows": 294390,
+  "test_rows": 928964,
+  "validation_metrics": [
+    {
+      "model": "TwoStageDemand",
+      "validation": {
+        "MAE": 2.90811,
+        "RMSE": 26.09893,
+        "WAPE": 0.94906,
+        "R2": 0.05551
+      },
+      "sale_probability_threshold": 0.55,
+      "probabilistic_expected_demand_validation": {
+        "MAE": 2.98597,
+        "RMSE": 25.99756,
+        "WAPE": 0.97447,
+        "R2": 0.06283
+      }
+    },
+    {
+      "model": "LinearRegression",
+      "validation": {
+        "MAE": 5.73847,
+        "RMSE": 26.09687,
+        "WAPE": 1.87275,
+        "R2": 0.05566
+      }
+    },
+    {
+      "model": "RandomForest",
+      "validation": {
+        "MAE": 5.92353,
+        "RMSE": 29.9337,
+        "WAPE": 1.93315,
+        "R2": -0.24243
+      }
+    },
+    {
+      "model": "HistGradientBoosting",
+      "validation": {
+        "MAE": 3.05732,
+        "RMSE": 26.98782,
+        "WAPE": 0.99776,
+        "R2": -0.00992
+      }
+    },
+    {
+      "model": "XGBoost",
+      "validation": {
+        "MAE": 5.14257,
+        "RMSE": 32.76376,
+        "WAPE": 1.67828,
+        "R2": -0.48847
+      }
+    }
+  ],
+  "selected_model": "TwoStageDemand",
+  "sale_probability_threshold": 0.55,
+  "threshold_search_validation": [
+    {
+      "threshold": 0.1,
+      "metrics": {
+        "MAE": 3.44065,
+        "RMSE": 25.81322,
+        "WAPE": 1.12286,
+        "R2": 0.07608
+      }
+    },
+    {
+      "threshold": 0.15,
+      "metrics": {
+        "MAE": 3.29698,
+        "RMSE": 25.8284,
+        "WAPE": 1.07597,
+        "R2": 0.07499
+      }
+    },
+    {
+      "threshold": 0.2,
+      "metrics": {
+        "MAE": 3.1913,
+        "RMSE": 25.83576,
+        "WAPE": 1.04148,
+        "R2": 0.07446
+      }
+    },
+    {
+      "threshold": 0.25,
+      "metrics": {
+        "MAE": 3.11023,
+        "RMSE": 25.85455,
+        "WAPE": 1.01503,
+        "R2": 0.07312
+      }
+    },
+    {
+      "threshold": 0.3,
+      "metrics": {
+        "MAE": 3.05176,
+        "RMSE": 25.87857,
+        "WAPE": 0.99594,
+        "R2": 0.07139
+      }
+    },
+    {
+      "threshold": 0.35,
+      "metrics": {
+        "MAE": 3.00681,
+        "RMSE": 25.9026,
+        "WAPE": 0.98127,
+        "R2": 0.06967
+      }
+    },
+    {
+      "threshold": 0.4,
+      "metrics": {
+        "MAE": 2.96891,
+        "RMSE": 25.93745,
+        "WAPE": 0.96891,
+        "R2": 0.06716
+      }
+    },
+    {
+      "threshold": 0.45,
+      "metrics": {
+        "MAE": 2.9393,
+        "RMSE": 25.99655,
+        "WAPE": 0.95924,
+        "R2": 0.06291
+      }
+    },
+    {
+      "threshold": 0.5,
+      "metrics": {
+        "MAE": 2.91526,
+        "RMSE": 26.04101,
+        "WAPE": 0.9514,
+        "R2": 0.0597
+      }
+    },
+    {
+      "threshold": 0.55,
+      "metrics": {
+        "MAE": 2.90811,
+        "RMSE": 26.09893,
+        "WAPE": 0.94906,
+        "R2": 0.05551
+      }
+    },
+    {
+      "threshold": 0.6,
+      "metrics": {
+        "MAE": 2.91131,
+        "RMSE": 26.18686,
+        "WAPE": 0.95011,
+        "R2": 0.04914
+      }
+    },
+    {
+      "threshold": 0.65,
+      "metrics": {
+        "MAE": 2.92247,
+        "RMSE": 26.29906,
+        "WAPE": 0.95375,
+        "R2": 0.04097
+      }
+    },
+    {
+      "threshold": 0.7,
+      "metrics": {
+        "MAE": 2.93461,
+        "RMSE": 26.37809,
+        "WAPE": 0.95771,
+        "R2": 0.0352
+      }
+    },
+    {
+      "threshold": 0.75,
+      "metrics": {
+        "MAE": 2.94946,
+        "RMSE": 26.45795,
+        "WAPE": 0.96256,
+        "R2": 0.02935
+      }
+    },
+    {
+      "threshold": 0.8,
+      "metrics": {
+        "MAE": 2.96696,
+        "RMSE": 26.53756,
+        "WAPE": 0.96827,
+        "R2": 0.0235
+      }
+    },
+    {
+      "threshold": 0.85,
+      "metrics": {
+        "MAE": 2.98975,
+        "RMSE": 26.65901,
+        "WAPE": 0.97571,
+        "R2": 0.01454
+      }
+    },
+    {
+      "threshold": 0.9,
+      "metrics": {
+        "MAE": 3.0129,
+        "RMSE": 26.76193,
+        "WAPE": 0.98326,
+        "R2": 0.00692
+      }
+    }
+  ],
+  "test_metrics": {
+    "MAE": 3.88074,
+    "RMSE": 24.79266,
+    "WAPE": 1.07823,
+    "R2": 0.13431
+  },
+  "lag1_baseline_test_metrics": {
+    "MAE": 5.23424,
+    "RMSE": 34.591,
+    "WAPE": 1.45429,
+    "R2": -0.68517
+  },
+  "metrics_definition": {
+    "MAE": "mean absolute error",
+    "RMSE": "root mean squared error",
+    "WAPE": "sum absolute error / sum actual",
+    "R2": "coefficient of determination"
+  },
+  "notes": [
+    "Target-derived transformations, target class, contemporaneous price and invoice count, and outlier flags are excluded from predictors.",
+    "TwoStageDemand predicts sale probability then positive demand, with expected demand equal to probability times positive-demand estimate.",
+    "Validation selects the model; test is evaluated once after selection.",
+    "Negative direct demand forecasts are clipped to zero.",
+    "WAPE above 1 means aggregate absolute error is larger than aggregate actual demand."
+  ]
+}

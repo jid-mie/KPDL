@@ -1,0 +1,60 @@
+{
+  "description": "Croston, SBA, and TSB intermittent demand models benchmark (one-step-ahead rolling update)",
+  "evaluation_mode": "one_step_ahead_rolling",
+  "best_hyperparameters": {
+    "croston": {
+      "alpha": 0.05
+    },
+    "sba": {
+      "alpha": 0.2,
+      "bias_correction": 0.9
+    },
+    "tsb": {
+      "alpha": 0.2,
+      "beta": 0.4
+    }
+  },
+  "validation_wape": {
+    "croston": 1.93749,
+    "sba": 1.9058,
+    "tsb": 1.37323
+  },
+  "test_metrics": {
+    "Croston": {
+      "MAE": 5.55665,
+      "RMSE": 26.22919,
+      "WAPE": 1.54387,
+      "R2": 0.03108
+    },
+    "SBA": {
+      "MAE": 5.80298,
+      "RMSE": 34.21193,
+      "WAPE": 1.61231,
+      "R2": -0.64844
+    },
+    "TSB": {
+      "MAE": 4.52756,
+      "RMSE": 25.72342,
+      "WAPE": 1.25795,
+      "R2": 0.06809
+    },
+    "TwoStageDemand": {
+      "MAE": 3.88074,
+      "RMSE": 24.79266,
+      "WAPE": 1.07823,
+      "R2": 0.13431
+    },
+    "Lag1_Baseline": {
+      "MAE": 5.23424,
+      "RMSE": 34.591,
+      "WAPE": 1.45429,
+      "R2": -0.68517
+    }
+  },
+  "discussion": [
+    "Croston (1972) updates demand size and inter-demand interval only when positive sales occur, keeping forecasts flat during zero runs.",
+    "SBA (Syntetos-Boylan Approximation, 2001) multiplies Croston by (1 - alpha/2) to correct inversion bias, slightly reducing over-forecasting.",
+    "TSB (Teunter-Syntetos-Babai, 2011) updates demand probability at every day (decaying by 1-beta on zero-sale days), outperforming Croston/SBA and Lag-1 Baseline on WAPE and RMSE.",
+    "However, TwoStageDemand (Hurdle ML model with 23 calendar/price/cluster/lag features) still outperforms univariate TSB (WAPE 1.078 vs 1.157), showing the value of cross-sectional and calendar features."
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "input_file": "online_retail_II.xlsx",
+  "sheets": [
+    "Year 2009-2010",
+    "Year 2010-2011"
+  ],
+  "source_rows": 1067371,
+  "clean_transaction_rows": 1007913,
+  "product_transaction_rows": 1003653,
+  "daily_demand_rows_including_zero_sales": 3497687,
+  "service_or_fee_rows_excluded_from_demand_branch": 4260,
+  "removal_steps": [
+    {
+      "step": "cancelled_invoice",
+      "removed_rows": 19494,
+      "percent_of_source": 1.8264
+    },
+    {
+      "step": "negative_quantity",
+      "removed_rows": 3457,
+      "percent_of_source": 0.3239
+    },
+    {
+      "step": "nonpositive_price",
+      "removed_rows": 2750,
+      "percent_of_source": 0.2576
+    },
+    {
+      "step": "exact_duplicate",
+      "removed_rows": 33757,
+      "percent_of_source": 3.1626
+    },
+    {
+      "step": "unresolved_product_description_or_code",
+      "removed_rows": 0,
+      "percent_of_source": 0.0
+    },
+    {
+      "step": "missing_or_invalid_core_field",
+      "removed_rows": 0,
+      "percent_of_source": 0.0
+    }
+  ],
+  "total_removed_by_quality_steps": 59458,
+  "missing_values_before_cleaning": {
+    "InvoiceNo": {
+      "count": 0,
+      "percent": 0.0
+    },
+    "StockCode": {
+      "count": 0,
+      "percent": 0.0
+    },
+    "Description": {
+      "count": 4382,
+      "percent": 0.4105
+    },
+    "Quantity": {
+      "count": 0,
+      "percent": 0.0
+    },
+    "InvoiceDate": {
+      "count": 0,
+      "percent": 0.0
+    },
+    "UnitPrice": {
+      "count": 0,
+      "percent": 0.0
+    },
+    "CustomerID": {
+      "count": 243007,
+      "percent": 22.7669
+    },
+    "Country": {
+      "count": 0,
+      "percent": 0.0
+    }
+  },
+  "missing_customer_id_after_cleaning": 228488,
+  "date_range": {
+    "start": "2009-12-01",
+    "end": "2011-12-09"
+  },
+  "notes": [
+    "Customer ID is retained as nullable and is not imputed.",
+    "Service and fee codes without digits are excluded only from demand aggregation.",
+    "Zero-sales days are explicitly represented; UnitPrice remains null on those days.",
+    "Holiday flag is not inferred because the project description does not specify a country calendar."
+  ]
+}

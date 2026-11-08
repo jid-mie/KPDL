@@ -1,0 +1,281 @@
+{
+  "rows": 1007913,
+  "products": 4745,
+  "customers": 5878,
+  "countries": 43,
+  "date_range": [
+    "2009-12-01",
+    "2011-12-09"
+  ],
+  "quantity_distribution": {
+    "count": 1007913.0,
+    "mean": 11.117177772287887,
+    "std": 128.47002535445802,
+    "min": 1.0,
+    "50%": 4.0,
+    "90%": 24.0,
+    "95%": 31.0,
+    "99%": 108.0,
+    "max": 80995.0
+  },
+  "unit_price_distribution": {
+    "count": 1007913.0,
+    "mean": 4.074251863008017,
+    "std": 50.43045432750985,
+    "min": 0.001,
+    "50%": 2.1,
+    "90%": 7.95,
+    "95%": 9.95,
+    "99%": 18.0,
+    "max": 25111.09
+  },
+  "top_10_products_by_revenue": [
+    {
+      "StockCode": "M",
+      "Transactions": 788,
+      "Quantity": 9634,
+      "Revenue": 339241.29
+    },
+    {
+      "StockCode": "22423",
+      "Transactions": 3918,
+      "Quantity": 26478,
+      "Revenue": 330590.32
+    },
+    {
+      "StockCode": "DOT",
+      "Transactions": 1415,
+      "Quantity": 1415,
+      "Revenue": 309854.11
+    },
+    {
+      "StockCode": "85123A",
+      "Transactions": 5464,
+      "Quantity": 94719,
+      "Revenue": 261168.73
+    },
+    {
+      "StockCode": "85099B",
+      "Transactions": 4013,
+      "Quantity": 97176,
+      "Revenue": 182680.98
+    },
+    {
+      "StockCode": "23843",
+      "Transactions": 1,
+      "Quantity": 80995,
+      "Revenue": 168469.6
+    },
+    {
+      "StockCode": "47566",
+      "Transactions": 2674,
+      "Quantity": 28200,
+      "Revenue": 148318.28
+    },
+    {
+      "StockCode": "84879",
+      "Transactions": 2807,
+      "Quantity": 80082,
+      "Revenue": 129324.49
+    },
+    {
+      "StockCode": "POST",
+      "Transactions": 1851,
+      "Quantity": 5363,
+      "Revenue": 125682.42
+    },
+    {
+      "StockCode": "22086",
+      "Transactions": 2018,
+      "Quantity": 35084,
+      "Revenue": 117760.29000000001
+    }
+  ],
+  "top_10pct_products_revenue_share": 0.6316949749124426,
+  "customer_id_missing_pct": 0.22669416904038345,
+  "identified_customer_count": 5878,
+  "customer_revenue_quantiles": {
+    "0.0": 2.95,
+    "0.25": 342.28,
+    "0.5": 867.74,
+    "0.75": 2248.305,
+    "0.9": 5465.741000000001,
+    "0.99": 29205.900999999645,
+    "1.0": 580987.04
+  },
+  "top_10_customers_by_revenue": [
+    {
+      "CustomerID": 18102,
+      "InvoiceCount": 145,
+      "Quantity": 181645,
+      "Revenue": 580987.04,
+      "FirstPurchase": "2009-12-01 00:00:00",
+      "LastPurchase": "2011-12-09 00:00:00"
+    },
+    {
+      "CustomerID": 14646,
+      "InvoiceCount": 151,
+      "Quantity": 367193,
+      "Revenue": 528602.52,
+      "FirstPurchase": "2009-12-02 00:00:00",
+      "LastPurchase": "2011-12-08 00:00:00"
+    },
+    {
+      "CustomerID": 14156,
+      "InvoiceCount": 156,
+      "Quantity": 164325,
+      "Revenue": 313437.62,
+      "FirstPurchase": "2009-12-01 00:00:00",
+      "LastPurchase": "2011-11-30 00:00:00"
+    },
+    {
+      "CustomerID": 14911,
+      "InvoiceCount": 398,
+      "Quantity": 147972,
+      "Revenue": 291420.81,
+      "FirstPurchase": "2009-12-01 00:00:00",
+      "LastPurchase": "2011-12-08 00:00:00"
+    },
+    {
+      "CustomerID": 17450,
+      "InvoiceCount": 51,
+      "Quantity": 83914,
+      "Revenue": 244784.25,
+      "FirstPurchase": "2010-09-27 00:00:00",
+      "LastPurchase": "2011-12-01 00:00:00"
+    },
+    {
+      "CustomerID": 13694,
+      "InvoiceCount": 143,
+      "Quantity": 188201,
+      "Revenue": 195640.69,
+      "FirstPurchase": "2009-12-04 00:00:00",
+      "LastPurchase": "2011-12-06 00:00:00"
+    },
+    {
+      "CustomerID": 17511,
+      "InvoiceCount": 60,
+      "Quantity": 117174,
+      "Revenue": 172132.87,
+      "FirstPurchase": "2009-12-02 00:00:00",
+      "LastPurchase": "2011-12-07 00:00:00"
+    },
+    {
+      "CustomerID": 16446,
+      "InvoiceCount": 2,
+      "Quantity": 80997,
+      "Revenue": 168472.5,
+      "FirstPurchase": "2011-05-18 00:00:00",
+      "LastPurchase": "2011-12-09 00:00:00"
+    },
+    {
+      "CustomerID": 16684,
+      "InvoiceCount": 55,
+      "Quantity": 104810,
+      "Revenue": 147142.77,
+      "FirstPurchase": "2009-12-07 00:00:00",
+      "LastPurchase": "2011-12-05 00:00:00"
+    },
+    {
+      "CustomerID": 12415,
+      "InvoiceCount": 28,
+      "Quantity": 91447,
+      "Revenue": 144458.37,
+      "FirstPurchase": "2010-06-30 00:00:00",
+      "LastPurchase": "2011-11-15 00:00:00"
+    }
+  ],
+  "country_top_10_by_revenue": [
+    {
+      "Country": "United Kingdom",
+      "Transactions": 36535,
+      "Customers": 5350,
+      "Quantity": 9187753,
+      "Revenue": 17410196.117,
+      "RevenueShare": 0.8502624862197687
+    },
+    {
+      "Country": "EIRE",
+      "Transactions": 626,
+      "Customers": 5,
+      "Quantity": 336329,
+      "Revenue": 658767.31,
+      "RevenueShare": 0.03217224706009952
+    },
+    {
+      "Country": "Netherlands",
+      "Transactions": 228,
+      "Customers": 22,
+      "Quantity": 383879,
+      "Revenue": 554038.09,
+      "RevenueShare": 0.02705758170086741
+    },
+    {
+      "Country": "Germany",
+      "Transactions": 789,
+      "Customers": 107,
+      "Quantity": 225154,
+      "Revenue": 425019.711,
+      "RevenueShare": 0.02075670565332711
+    },
+    {
+      "Country": "France",
+      "Transactions": 622,
+      "Customers": 95,
+      "Quantity": 271901,
+      "Revenue": 350456.09,
+      "RevenueShare": 0.017115238931932536
+    },
+    {
+      "Country": "Australia",
+      "Transactions": 95,
+      "Customers": 15,
+      "Quantity": 103759,
+      "Revenue": 169283.46,
+      "RevenueShare": 0.008267303516181568
+    },
+    {
+      "Country": "Spain",
+      "Transactions": 154,
+      "Customers": 41,
+      "Quantity": 50307,
+      "Revenue": 108332.49,
+      "RevenueShare": 0.005290638409054875
+    },
+    {
+      "Country": "Switzerland",
+      "Transactions": 93,
+      "Customers": 22,
+      "Quantity": 52762,
+      "Revenue": 100685.59,
+      "RevenueShare": 0.004917186429411449
+    },
+    {
+      "Country": "Sweden",
+      "Transactions": 105,
+      "Customers": 19,
+      "Quantity": 88633,
+      "Revenue": 91869.82,
+      "RevenueShare": 0.004486650296000376
+    },
+    {
+      "Country": "Denmark",
+      "Transactions": 43,
+      "Customers": 12,
+      "Quantity": 237471,
+      "Revenue": 68580.69,
+      "RevenueShare": 0.00334927806638143
+    }
+  ],
+  "country_revenue_concentration_top_3": 0.9094923149807356,
+  "monthly_rows": 25,
+  "weekly_rows": 106,
+  "monthly_quantity_peak": {
+    "period": "2011-11",
+    "quantity": 751377
+  },
+  "monthly_revenue_peak": {
+    "period": "2011-11",
+    "revenue": 1503866.78
+  }
+}

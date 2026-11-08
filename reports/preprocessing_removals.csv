@@ -1,0 +1,7 @@
+﻿step,removed_rows,percent_of_source
+cancelled_invoice,19494,1.8264
+negative_quantity,3457,0.3239
+nonpositive_price,2750,0.2576
+exact_duplicate,33757,3.1626
+unresolved_product_description_or_code,0,0.0
+missing_or_invalid_core_field,0,0.0
