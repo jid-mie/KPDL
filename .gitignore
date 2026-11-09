@@ -4,8 +4,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Raw dataset & large generated intermediate datasets
-online_retail_II.xlsx
+# Large generated intermediate datasets
 data/processed/transactions_clean.csv
 data/processed/transactions_clean.parquet
 data/processed/product_daily_demand.csv
